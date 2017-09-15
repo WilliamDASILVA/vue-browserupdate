@@ -1,0 +1,30 @@
+{
+  "name": "vue-browserupdate",
+  "version": "1.0.0",
+  "description": "Vue wrapper for 'browser-update' package",
+  "main": "index.js",
+  "dependencies": {
+    "browser-update": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "wrapper",
+    "outdated",
+    "browser",
+    "compatibility",
+    "update",
+    "internet",
+    "explorer",
+    "chrome",
+    "safari",
+    "firefox",
+    "opera"
+  ],
+  "author": "William DA SILVA <william.da.silva@outlook.com>",
+  "license": "MIT"
+}
