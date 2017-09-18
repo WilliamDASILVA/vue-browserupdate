@@ -14,8 +14,9 @@ function addLoadEvent(func) {
   }
 }
 
-const VueOutdatedBrowser = {};
-VueOutdatedBrowser.install = (Vue, options) => {
+const VueBrowserUpdate = {};
+VueBrowserUpdate.install = (Vue, opts) => {
+  const options = opts;
   const funcs = {
     show: [],
     click: [],
@@ -33,15 +34,22 @@ VueOutdatedBrowser.install = (Vue, options) => {
     if (typeof browserUpdate === 'undefined') {
       throw new Error('The plugin "browser-update" could not be loaded.');
     } else {
-      browserUpdate(options.options, options.test);
+      if (!options.containerAsync) {
+        console.log('Load for', options.options);
+        browserUpdate(options.options, options.test);
+      }
     }
   });
 
-  Vue.outdatedBrowser = {
+  Vue.browserUpdate = {
     onshow: func => funcs.show.push(func),
     onclick: func => funcs.click.push(func),
     onclose: func => funcs.close.push(func),
+    appendContainer: (container) => {
+      if (container) options.options.container = container;
+      browserUpdate(options.options, options.test);
+    },
   };
 };
 
-export default VueOutdatedBrowser;
+export default VueBrowserUpdate;
