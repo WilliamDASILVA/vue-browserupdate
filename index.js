@@ -35,7 +35,6 @@ VueBrowserUpdate.install = (Vue, opts) => {
       throw new Error('The plugin "browser-update" could not be loaded.');
     } else {
       if (!options.containerAsync) {
-        console.log('Load for', options.options);
         browserUpdate(options.options, options.test);
       }
     }
