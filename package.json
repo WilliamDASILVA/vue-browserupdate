@@ -1,6 +1,6 @@
 {
   "name": "vue-browserupdate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Vue wrapper for 'browser-update' package",
   "main": "dist/index.js",
   "dependencies": {
