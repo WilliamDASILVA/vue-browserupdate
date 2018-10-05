@@ -1,7 +1,7 @@
 import browserUpdate from 'browser-update';
 
 function addLoadEvent(func) {
-  const ondOnLoad = window.onload;
+  const oldOnLoad = window.onload;
   if (typeof window.onload !== 'function') {
     window.onload = func;
   } else {
